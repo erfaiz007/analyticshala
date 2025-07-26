@@ -1,7 +1,7 @@
 @import "node_modules/vanilla-infinite-marquee/infinite-marquee.css";
 
 .marq_container {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .marq_container .horizontal-marquee-inner {

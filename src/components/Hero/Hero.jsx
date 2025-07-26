@@ -10,7 +10,10 @@ const Hero = () => {
     <section className="hero" id="hero">
       <main className="hero_main">
         <div className="hero_title">
-          <div className="single_line">Analytics</div>
+          <div className="logo_name">
+            <img src="/logoname.png" alt="logo name" />
+          </div>
+          {/* <div className="single_line">Analytics</div> */}
           <div className="single_line">that Helps You</div>
           <div className="shape single_line">Shape Your Future</div>
         </div>

@@ -21,13 +21,20 @@ function Homepage() {
 
   useEffect(() => {
     if (location.hash) {
-      const el = document.querySelector(location.hash);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+    const el = document.querySelector(location.hash);
+    if (el) {
+      setTimeout(() => {
+        const headerOffset = 100;
+        const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }, 100);
     }
+  }
   }, [location]);
 
   return (

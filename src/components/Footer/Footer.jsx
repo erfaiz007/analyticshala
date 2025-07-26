@@ -1,19 +1,23 @@
 // import Data
+import { Link } from "react-router-dom";
 import { socialIconsData } from "../../../appData";
 
 // import CSS
 import "./footer.css";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="footer_container">
-        <a className="footer_logo" href="#">
-          <h1>AnalyticShala</h1>
-        </a>
+                 <Link className="footer_logo" to="/#hero">
+                    <img src="/logoname.png" alt="logo name" />
+                  </Link>
+
 
         <div className="footer_copyright">
-          <span>&#169;</span> All rights reserved 2024, Analyticshala
+          <span>&#169;</span> All rights reserved {currentYear}, Analyticshala
         </div>
 
         <div className="footer_social">
