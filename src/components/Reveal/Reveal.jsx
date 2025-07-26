@@ -46,9 +46,9 @@ const Reveal = () => {
     "At AnalyticShala, we offer engaging courses in analytics, data visualization, and web development, helping you gain the skills to excel in today’s data-driven world. Join us and unlock your potential!";
 
   return (
-    <section className="reveal" id="about">
+    <section className="reveal" id="reveal">
       <div className="container">
-        <SectionHeader number="01" title="know" subtitle="About Us" />
+        <SectionHeader number="01" title="Know" subtitle="About Us" />
 
         <div ref={triggerRef}>
           {text.split("").map((letter, index) => (

@@ -57,7 +57,7 @@ useEffect(()=>{
                   <span className="sperator">|</span>
                   <div className="skills_data_item">
                     <div className="skills_number">
-                      50<span>+</span>
+                      500<span>+</span>
                     </div>
                     <div className="skills_info">Students Trained</div>
                   </div>
