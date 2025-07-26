@@ -7,7 +7,7 @@ export const socialIconsData = [
   {
     id: 1,
     class: "fab fa-linkedin-in",
-    href: "https://www.linkedin.com/in/faizan-ansari-8989ab125/",
+    href: "https://www.linkedin.com/company/102031252/admin/dashboard/",
   },
   { id: 2, class: "fab fa-instagram", href: "https://www.instagram.com/analyticshala/" },
 ];
