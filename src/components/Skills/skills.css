@@ -72,8 +72,9 @@
 
 .skills_types {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .skills_type_item i {
@@ -93,19 +94,21 @@
 }
 
 .skills_type_item:nth-child(1)::before,
-.skills_type_item:nth-child(2)::before {
+.skills_type_item:nth-child(2)::before,
+.skills_type_item:nth-child(3)::before {
   content: "";
   position: absolute;
   top: 1rem;
   left: 25%;
   height: 2px;
-  width: 100%;
+  width: 50%;
   background-color: #333;
 }
 
 .skills_type_title {
   font-size: 1.25rem;
   font-weight: 500;
+  margin-top: 0.5rem
 }
 
 .skills_type_subtitle {
@@ -154,7 +157,7 @@
   }
 
   .skills_types {
-    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
@@ -166,4 +169,11 @@
     font-size: 0.9rem;
     line-height: 1.1rem;
   }
+
+  .skills_type_item:nth-child(1)::before,
+.skills_type_item:nth-child(2)::before,
+.skills_type_item:nth-child(3)::before {
+  left: 15%;
+  width: 80%;
+}
 }

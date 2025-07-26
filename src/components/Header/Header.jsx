@@ -14,7 +14,7 @@ const Header = () => {
     <>
       <header className="header">
         <nav>
-          <Link className="nav_logo" to="/">
+          <Link className="nav_logo" to="/#hero">
             AnalyticShala
           </Link>
 

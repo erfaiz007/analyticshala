@@ -43,7 +43,7 @@ const Testimony = () => {
                     <img src={value.image} alt="image" />
                     <div>
                       <h3>{value.name}</h3>
-                      <p>{value.position}</p>
+                      {/* <p>{value.position}</p> */}
                     </div>
                   </div>
                 </div>
