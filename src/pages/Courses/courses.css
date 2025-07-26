@@ -1,0 +1,15 @@
+.courses_container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .courses_container {
+    min-height: 70vh;
+    font-size: 2rem;
+  }
+}

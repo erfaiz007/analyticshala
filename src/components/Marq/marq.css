@@ -1,0 +1,16 @@
+@import "node_modules/vanilla-infinite-marquee/infinite-marquee.css";
+
+.marq_container {
+  padding: 1rem 0;
+}
+
+.marq_container .horizontal-marquee-inner {
+  gap: 2rem;
+}
+
+.image_wrapper img {
+  height: 50px;
+  width: 50px;
+  border-radius: 0.25rem;
+  object-fit: cover;
+}

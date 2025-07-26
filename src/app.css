@@ -1,0 +1,66 @@
+/*google fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Norican&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --off-white: #e8f1f2;
+  --off-dark: #164863;
+  --light-dark: #8cd7ff;
+  --dark-bg: linear-gradient(50deg, #3789bf 0%, #2c3e50 0%);
+}
+
+/*--------BASE----------*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Section Styles*/
+section {
+  position: relative;
+  padding: 10vh 1rem;
+  padding-top: 0;
+  background-color: var(--off-white);
+  color: var(--off-dark);
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  section {
+    padding: 5vh 1rem;
+  }
+}

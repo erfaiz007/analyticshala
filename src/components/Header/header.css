@@ -1,0 +1,151 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  padding: 1rem;
+  background-color: #222;
+  color: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.header nav {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header .nav_logo {
+  font-family: "Kaushan Script", cursive;
+  font-size: 2rem;
+  width: 100%;
+}
+
+.header .nav_items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header .nav_items a {
+  position: relative;
+  width: max-content;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.header .nav_items a::before {
+  position: absolute;
+  content: "";
+  bottom: 0rem;
+  left: 0;
+  background-color: var(--off-white);
+  height: 2px;
+  width: 0%;
+  transition: all 0.3s ease;
+}
+
+.header .nav_items a:hover::before {
+  width: 100%;
+}
+
+/* Hamburger menu */
+.ham_wrapper {
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.ham_icon {
+  position: relative;
+  width: 25px;
+  height: 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.ham_icon span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--off-white);
+  border-radius: 2rem;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+.ham_icon span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 50%;
+  transform: translateY(0);
+}
+
+.ham_icon span:nth-child(2) {
+  width: 100%;
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.ham_icon span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  rotate: 0;
+}
+
+.ham_wrapper.active .ham_icon {
+  rotate: 225deg;
+}
+
+.ham_wrapper.active span:nth-child(1) {
+  width: 100%;
+  transform: translateY(10px);
+  transition-delay: 0s;
+}
+
+.ham_wrapper.active span:nth-child(2) {
+  transform: scaleX(0);
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.ham_wrapper.active span:nth-child(3) {
+  width: 100%;
+  rotate: 90deg;
+  bottom: 8px;
+  transition-delay: 0s;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .header .nav_logo {
+    font-size: 1.5rem;
+  }
+
+  .ham_wrapper {
+    display: flex;
+  }
+
+  .ham_icon span {
+    height: 2px;
+  }
+
+  .header .nav_items {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.sectionHeader .sectionHeader_number {
+  font-size: 1.25rem;
+}
+
+.sectionHeader span {
+  height: 2px;
+  width: 50px;
+  background-color: coral;
+}
+
+.sectionHeader h1 {
+  font-weight: 300;
+}
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .sectionHeader {
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .sectionHeader span {
+    width: 40px;
+  }
+}

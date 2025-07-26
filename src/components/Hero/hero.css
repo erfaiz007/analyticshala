@@ -1,0 +1,127 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero_main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 5vh 2rem;
+}
+
+.hero_main .hero_title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  line-height: 4.5rem;
+  font-weight: bold;
+}
+
+.hero_main .hero_title .shape {
+  color: #e3735e;
+}
+
+.hero_buttons,
+.hero_info,
+.hero_info p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero_buttons a {
+  min-width: 200px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--off-dark);
+  color: var(--off-white);
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero_buttons a:nth-child(2) {
+  background-color: var(--off-white);
+  color: var(--off-dark);
+  border-color: var(--off-dark);
+}
+
+/* .hero_buttons a:hover {
+  background-color: var(--off-white);
+  color: var(--off-dark);
+  border-color: var(--off-dark);
+}
+
+.hero_buttons a:nth-child(2):hover {
+  background-color: var(--off-dark);
+  color: var(--off-white);
+  border-color: var(--off-white);
+} */
+
+.hero_info p {
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.hero_info p i {
+  background-color: var(--off-dark);
+  color: var(--off-white);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .hero {
+    height: max-content;
+  }
+
+  .hero_main {
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .hero_main .hero_title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .hero_buttons,
+  .hero_info {
+    gap: 0.75rem;
+  }
+
+  .hero_buttons a {
+    min-width: 150px;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .hero_info {
+    transform: translateX(20%);
+    justify-content: flex-start;
+  }
+
+  .hero_info p {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero_info p i {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+}

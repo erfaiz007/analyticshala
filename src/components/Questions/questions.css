@@ -1,0 +1,120 @@
+.questions_main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.question_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--off-dark);
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.question_item.active {
+  /* height: 22vh; */
+  background-color: var(--off-dark);
+  color: var(--off-white);
+}
+
+.question_item .question_area {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.question_item .question_area h3 {
+  display: flex;
+  gap: 1rem;
+}
+
+.question_item .question_number {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 2rem;
+}
+
+.question_arrow {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--off-dark);
+  color: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.question_item.active .question_arrow {
+  transform: rotate(90deg);
+  border: 2px solid var(--off-white);
+}
+
+.question_item .answer_area {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.question_item.active .answer_area {
+  max-height: max-content;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  section.questions {
+    padding: 5vh 0;
+  }
+
+  section.questions .sectionHeader {
+    padding: 0 1rem;
+  }
+
+  .questions_main {
+    gap: 0.5rem;
+  }
+
+  .question_item {
+    padding: 1rem 0.5rem;
+    border-width: 1px;
+  }
+
+  .question_item .question_area {
+    gap: 0.25rem;
+  }
+
+  .question_item .question_area h3 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 90%;
+    gap: 0.25rem;
+    font-weight: 500;
+  }
+
+  .question_item .question_number {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .question_arrow {
+    height: 2rem;
+    width: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .question_item .answer_area {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    padding: 0 0.5rem;
+  }
+}
