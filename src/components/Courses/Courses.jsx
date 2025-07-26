@@ -36,7 +36,7 @@ const Courses = () => {
   return (
     <section className="courses" id="courses">
       <div className="container">
-        <SectionHeader number="02" title="Review the" subtitle="Courses" />
+        <SectionHeader number="01" title="Review the" subtitle="Courses" />
 
         <div className="course_nav">
           {courseCategory.map((course, index) => (

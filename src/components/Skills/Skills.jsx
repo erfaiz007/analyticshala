@@ -21,7 +21,7 @@ useEffect(()=>{
       <section className="skills" id="skills">
         <div className="container">
           <SectionHeader
-            number="05"
+            number="03"
             title="Get the Required"
             subtitle="Skills"
           />
@@ -38,7 +38,7 @@ useEffect(()=>{
               <div className="skills_details">
                 <p>
                   The modern tech market dictates its own terms. Today, to be a
-                  competitive spiaclist requires more than professional skills.
+                  competitive specialist requires more than professional skills.
                 </p>
                 <div className="skills_data">
                   <div className="skills_data_item">

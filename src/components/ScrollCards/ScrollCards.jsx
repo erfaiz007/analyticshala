@@ -12,7 +12,7 @@ const ScrollCards = ({ setShowDownload }) => {
     <section className="scrollCards">
       <div className="container">
         <SectionHeader
-          number="03"
+          number="02"
           title="Why Choose"
           subtitle="Analyticshala"
         />

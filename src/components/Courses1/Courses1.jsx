@@ -13,7 +13,7 @@ const Courses1 = ({ setShowDownload }) => {
   return (
     <section className="courses1" id="courses1">
       <div className="container">
-        <SectionHeader number="02" title="Review the" subtitle="Courses" />
+        <SectionHeader number="01" title="Review the" subtitle="Courses" />
 
         <main>
           {coursesData.map((course) => (

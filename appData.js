@@ -1,15 +1,15 @@
 export const socialIconsData = [
-  {
-    id: 0,
-    class: "fab fa-github",
-    href: "https://github.com/SonuAkhtar",
-  },
+  // {
+  //   id: 0,
+  //   class: "fab fa-github",
+  //   href: "https://github.com/SonuAkhtar",
+  // },
   {
     id: 1,
     class: "fab fa-linkedin-in",
-    href: "https://www.linkedin.com/in/riyaz-akhtar-03bb59129",
+    href: "https://www.linkedin.com/in/faizan-ansari-8989ab125/",
   },
-  { id: 2, class: "fab fa-twitter", href: "https://twitter.com/SonuA007" },
+  { id: 2, class: "fab fa-instagram", href: "https://www.instagram.com/analyticshala/" },
 ];
 
 export const menuMobileData = [
@@ -338,30 +338,30 @@ export const skillsData = [
   },
 ];
 
-export const teamData = [
-  {
+export const teamData = [  {
     id: 1,
+    name: "Waseem Ansari",
+    position: "Founder",
+    profile: "WASEEM",
+    image: "/assets/hobbies/dev_2.jpg",
+    social: [
+      {
+        href: "https://www.linkedin.com/in/waseemansari/",
+        iconClass: "fab fa-linkedin-in",
+      },
+    ],
+  },
+
+  {
+    id: 2,
     name: "Faizan Ansari",
-    position: "Data Science Trainer, Career Coach",
-    college: "ISB Alumni",
+    position: "Data Science & AI Trainer, Career Coach",
+    college: "ISB Alumnus",
     profile: "FAIZAN",
     image: "/assets/hobbies/dev_2.jpg",
     social: [
       {
         href: "https://www.linkedin.com/in/faizan-ansari-8989ab125",
-        iconClass: "fab fa-linkedin-in",
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Aishvarya Joshi",
-    position: "Communication Trainer",
-    profile: "AISHVARYA",
-    image: "/assets/hobbies/dev_1.jpg",
-    social: [
-      {
-        href: "https://www.linkedin.com/in/aishvarya1011/",
         iconClass: "fab fa-linkedin-in",
       },
     ],
@@ -385,19 +385,6 @@ export const teamData = [
   },
   {
     id: 4,
-    name: "Tavleen Kaur",
-    position: "Operations Manager",
-    profile: "TAVLEEN",
-    image: "/assets/hobbies/dev_1.jpg",
-    social: [
-      {
-        href: "https://www.linkedin.com/in/tavleen-kaur-a2b867293/",
-        iconClass: "fab fa-linkedin-in",
-      },
-    ],
-  },
-  {
-    id: 5,
     name: "Zahid Hussain",
     position: "Business Development Manager",
     profile: "ZAHID",
@@ -442,7 +429,7 @@ export const testimonyData = [
     id: 1,
     image: "/assets/testimony/boy.jpg",
     review:
-      "I had a highly positive experience completing the SQL course with Analytical Shala. The instructor was knowledgeable, clear, and responsive, ensuring an engaging and effective learning experience. I look forward to enrolling in future courses.",
+      "I had a highly positive experience completing the SQL course with AnalyticShala. The instructor is very knowledgeable, clear and responsive, ensuring an engaging and effective learning experience. I look forward to enrolling in future courses.",
     name: "Sameer",
     position: "Senior Engineer @abc",
   },
@@ -450,7 +437,7 @@ export const testimonyData = [
     id: 2,
     image: "/assets/testimony/girl.webp",
     review:
-      "I recently took SQL classes with Analytical Shala, and my experience was exceptional. The course provided a thorough introduction to SQL, with the instructor's deep knowledge and clear teaching style making complex concepts easy to understand.",
+      "I recently took Data Analytics using Python classes with AnalyticShala, and my experience was exceptional. The course provided a deep and practical understanding of course, with the instructor's deep knowledge and clear teaching style making complex concepts easy to understand.",
     name: "Neha",
     position: "Manager @genpact",
   },
@@ -458,7 +445,7 @@ export const testimonyData = [
     id: 3,
     image: "/assets/testimony/boy.jpg",
     review:
-      "I received excellent service from Analytical Shala. The support was helpful and responsive, with clear explanations throughout. The online format allowed me to learn at my own pace and complete assignments easily. The course content was concise.",
+      "I received excellent support from AnalyticShala in my Analytics career. The support was helpful and responsive, with clear explanations throughout. The online format allowed me to learn at my own pace and complete assignments easily. The course content was concise.",
     name: "Tabjeel",
     position: "Data Analyst @wnf",
   },
@@ -466,7 +453,7 @@ export const testimonyData = [
     id: 4,
     image: "/assets/testimony/girl.webp",
     review:
-      "Thank you, Analytical Shala, for providing an outstanding learning experience. The trainer's enthusiasm and passion for SQL and Tableau made complex concepts easy to understand, while keeping the sessions engaging and enjoyable.",
+      "Thank you AnalyticShala, for providing an outstanding learning experience. The trainer's enthusiasm and passion for Data Science and AI made complex concepts easy to understand, while keeping the sessions engaging and enjoyable.",
     name: "Tavleen",
     position: "Business Analyst @accenture",
   },
@@ -554,28 +541,17 @@ export const scrollCardsData = [
   },
   {
     id: 3,
-    title: "One-on-One sessions",
-    info: "Experience personalized learning with dedicated one-on-one sessions tailored to your unique needs, helping you overcome challenges and achieve your goals faster.",
-  },
-
-  {
-    id: 4,
-    title: "Practice & Revision",
-    info: "Reinforce your knowledge with targeted practice sessions and revision materials designed to solidify your understanding and boost your confidence.",
-  },
-  {
-    id: 5,
     title: "Interview Preparation",
     info: "Prepare for success with our specialized interview coaching, offering insights and strategies to help you ace your interviews and land your dream job.",
   },
   {
-    id: 6,
+    id: 4,
     title: "Lifetime Support",
     info: "Enjoy continuous access to resources and expert guidance even after your course ends, ensuring you're never alone on your learning journey.",
   },
   {
-    id: 7,
+    id: 5,
     title: "Live Projects",
-    info: "Work on live projects based on the coureses you have learned, and skills you have practiced.",
+    info: "Work on live projects based on the courses you have learned, and skills you have practiced.",
   },
 ];

@@ -45,7 +45,7 @@ function Homepage() {
       <ScrollCards setShowDownload={setShowDownload} />
       <Skills />
       <Testimony />
-      {/* <HomeTeam /> */}
+      <HomeTeam />
       <Questions />
       <Contact />
     </>

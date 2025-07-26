@@ -16,7 +16,7 @@ const Questions = () => {
     <section className="questions" id="faq">
       <div className="container">
         <SectionHeader
-          number="07"
+          number="05"
           title="Frequently Asked"
           subtitle="Questions"
         />
