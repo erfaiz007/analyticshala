@@ -435,14 +435,6 @@ export const contactData = [
     info: "Gurgaon - India",
     alt: "location",
   },
-  {
-    id: 3,
-    icon: "/assets/contact/telephone.gif",
-    name: "Telephone",
-    info: "+91-9582608445",
-    href: "tel:+919582608445",
-    alt: "telephone",
-  },
 ];
 
 export const testimonyData = [

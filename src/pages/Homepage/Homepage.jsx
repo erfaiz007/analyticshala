@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 // Imported CSS
 import "./homepage.css";
@@ -14,23 +15,21 @@ import Questions from "../../components/Questions/Questions";
 import Contact from "../../components/Contact/Contact";
 import Download from "../../components/Download/Download";
 
-// import Components
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Works from "../../components/Works/Works";
-import Projects from "../../components/Projects/Projects";
-import Info from "../../components/Info/Info";
-import RotateText from "../../components/RotateText/RotateText";
-import Reveal from "../../components/Reveal/Reveal";
-import Gallery from "../../components/Gallery/Gallery";
-import ImageCards from "../../components/ImageCards/ImageCards";
-import Why from "../../components/Why/Why";
-import ScrollText from "../../components/ScrollText/ScrollText";
-import Hero1 from "../../components/Hero1/Hero1";
-import Courses from "../../components/Courses/Courses";
-
 function Homepage() {
   const [showDownload, setShowDownload] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <Download showDownload={showDownload} setShowDownload={setShowDownload} />
@@ -42,17 +41,6 @@ function Homepage() {
       <HomeTeam />
       <Questions />
       <Contact />
-      {/* <Reveal /> */}
-      {/* <ScrollText /> */}
-      {/* <Hero1 /> */}
-      {/* <RotateText /> */}
-      {/* <Courses /> */}
-      {/* <Works /> */}
-      {/* <Why /> */}
-      {/* <Info /> */}
-      {/* <Projects /> */}
-      {/* <Gallery /> */}
-      {/* <ImageCards /> */}
     </>
   );
 }

@@ -23,7 +23,7 @@ const Hero = () => {
 
         <div className="hero_info">
           <p>
-            <i className="fas fa-check" /> Free 2-Trial Classes
+            <i className="fas fa-check" /> 2-Free Trial Classes
           </p>
           <p>
             <i className="fas fa-check" /> Free Career Counselling
