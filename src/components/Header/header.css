@@ -59,6 +59,12 @@
   width: 100%;
 }
 
+.header .workshop_btn{
+  padding: .25rem .5rem;
+  border-radius: .25rem;
+  background-color: red;
+}
+
 /* Hamburger menu */
 .ham_wrapper {
   height: 100%;

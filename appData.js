@@ -9,7 +9,11 @@ export const socialIconsData = [
     class: "fab fa-linkedin-in",
     href: "https://www.linkedin.com/company/102031252/admin/dashboard/",
   },
-  { id: 2, class: "fab fa-instagram", href: "https://www.instagram.com/analyticshala/" },
+  {
+    id: 2,
+    class: "fab fa-instagram",
+    href: "https://www.instagram.com/analyticshala/",
+  },
 ];
 
 export const menuMobileData = [
@@ -132,6 +136,53 @@ export const worksData = [
     ],
   },
 ];
+
+export const workshopData = {
+  upcoming: [
+    {
+      id: 1001,
+      image: "/assets/workshops/workshop-1.png",
+      title: "Data Warehousing for Data Engineering",
+      date: "November 15, Saturday",
+      time: "02:00 PM - 05:00 PM",
+      eventMode: ["Offline", "Online"],
+    },
+    {
+      id: 1002,
+      image: "/assets/workshops/workshop-2.png",
+      title: "Data Warehousing for Data Engineering",
+      date: "December 21, Sunday",
+      time: "02:00 PM - 05:00 PM",
+      eventMode: ["Offline", "Online"],
+    },
+    {
+      id: 1003,
+      image: "/assets/workshops/workshop-2.png",
+      title: "Data Warehousing for Data Engineering",
+      date: "December 27, Sunday",
+      time: "02:00 PM - 05:00 PM",
+      eventMode: ["Offline", "Online"],
+    },
+  ],
+  previous: [
+    {
+      id: 1004,
+      image: "/assets/workshops/workshop-1.png",
+      title: "Data Warehousing for Data Engineering",
+      date: "November 15, Saturday",
+      time: "02:00 PM - 05:00 PM",
+      eventMode: ["Offline", "Online"],
+    },
+    {
+      id: 1005,
+      image: "/assets/workshops/workshop-2.png",
+      title: "Data Warehousing for Data Engineering",
+      date: "December 21, Sunday",
+      time: "02:00 PM - 05:00 PM",
+      eventMode: ["Offline", "Online"],
+    },
+  ],
+};
 
 export const projectsData = [
   {
@@ -338,7 +389,8 @@ export const skillsData = [
   },
 ];
 
-export const teamData = [  {
+export const teamData = [
+  {
     id: 1,
     name: "Waseem Ansari",
     position: "Founder",
@@ -346,7 +398,7 @@ export const teamData = [  {
     image: "/assets/hobbies/dev_2.jpg",
     social: [
       {
-        href: "https://www.linkedin.com/in/waseemansari/",
+        href: "https://www.linkedin.com/in/waseem-ahmad-59386617a/",
         iconClass: "fab fa-linkedin-in",
       },
     ],

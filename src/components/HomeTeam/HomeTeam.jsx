@@ -39,7 +39,12 @@ const HomeTeam = () => {
 
                   <div className="social_buttons">
                     {team.social.map((val, i) => (
-                      <a key={i} className="social_link" href={val.href}>
+                      <a
+                        key={i}
+                        className="social_link"
+                        href={val.href}
+                        target="_blank"
+                      >
                         <i className={val.iconClass}></i>
                       </a>
                     ))}

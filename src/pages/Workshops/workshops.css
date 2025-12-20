@@ -1,0 +1,18 @@
+.workshops_container {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.workshops_container h2 {
+  font-weight: 500;
+}
+
+.workshops_container main {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}

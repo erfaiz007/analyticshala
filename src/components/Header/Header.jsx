@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-// import Component
-import MenuMobile from "../MenuMobile/MenuMobile";
-
 // import CSS
 import "./header.css";
+
+// import Component
+import MenuMobile from "../MenuMobile/MenuMobile";
 
 const Header = () => {
   const [menuClick, setMenuClick] = useState(false);
@@ -19,6 +19,7 @@ const Header = () => {
           </Link>
 
           <div className="nav_items">
+            <Link to="/workshops" className="workshop_btn">Workshops</Link>
             <Link to="/aboutUs/#reveal">About Us</Link>
             <Link to="/#courses1">Courses</Link>
             <Link to="/#faq">FAQ</Link>

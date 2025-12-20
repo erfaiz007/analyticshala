@@ -1,0 +1,65 @@
+.WorkshopCard_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #9f9f9f;
+  border-radius: 0.25rem;
+  height: 35vh;
+  width: 100%;
+}
+
+.WorkshopCard_wrapper .card_left {
+  flex: 4;
+  height: 100%;
+}
+
+.WorkshopCard_wrapper .card_left img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.WorkshopCard_wrapper .card_right {
+  height: 100%;
+  flex: 6;
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.WorkshopCard_wrapper .card_right .limited_seats {
+  padding: 0.25rem;
+  background-color: yellowgreen;
+  width: max-content;
+}
+
+.WorkshopCard_wrapper .card_right .event_details {
+  padding-left: 1rem;
+}
+
+.WorkshopCard_wrapper .card_right a {
+  align-self: flex-end;
+  width: 150px;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+}
+
+.WorkshopCard_wrapper .event_details .event_mode {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.WorkshopCard_wrapper .event_mode span {
+  background-color: greenyellow;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
