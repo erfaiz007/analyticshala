@@ -1,0 +1,100 @@
+.success_wrapper {
+  height: 100%;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f6f7fb, #eef1f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.success_card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeUp 0.4s ease;
+}
+
+.success_icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.success_card h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2b2f38;
+  margin-bottom: 0.5rem;
+}
+
+.success_card p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.success_actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.success_actions button {
+  border: none;
+  outline: none;
+  padding: 0.7rem 1.25rem;
+  border-radius: 0.65rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Primary button */
+.success_primary {
+  background: linear-gradient(135deg, #6c5ce7, #5a4bdc);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.35);
+}
+
+.success_primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(108, 92, 231, 0.45);
+}
+
+/* Secondary button */
+.success_secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.success_secondary:hover {
+  background: #e5e7eb;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .success_actions {
+    flex-direction: column;
+  }
+
+  .success_actions button {
+    width: 100%;
+  }
+}

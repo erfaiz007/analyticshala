@@ -1,0 +1,114 @@
+/* Page wrapper */
+.payment_wrapper {
+  height: 100%;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f6f7fb, #eef1f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Card container */
+.payment_card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeUp 0.4s ease;
+}
+
+/* Title */
+.payment_card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2b2f38;
+  margin-bottom: 0.5rem;
+}
+
+/* Sub text */
+.payment_subtext {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* Amount box */
+.payment_amount {
+  background: #f8f9ff;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.payment_amount span {
+  display: block;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.payment_amount strong {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #6c5ce7;
+}
+
+/* Pay button */
+.pay_button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #6c5ce7, #5a4bdc);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(108, 92, 231, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pay_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(108, 92, 231, 0.45);
+}
+
+.pay_button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.35);
+}
+
+/* Security note */
+.payment_secure {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .payment_card {
+    padding: 2rem 1.5rem;
+  }
+
+  .payment_amount strong {
+    font-size: 1.5rem;
+  }
+}
