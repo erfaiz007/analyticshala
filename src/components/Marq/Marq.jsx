@@ -1,36 +1,18 @@
-import { useEffect } from "react";
-import InfiniteMarquee from "vanilla-infinite-marquee";
+import Marquee from "react-fast-marquee";
 import "./marq.css";
 
 const Marq = ({ data }) => {
-  useEffect(() => {
-    const marquee = new InfiniteMarquee({
-      element: ".marq_container",
-      speed: 60,
-      direction: "left",
-      duplicateCount: 2,
-      smoothEdges: true,
-      pauseOnHover: true,
-      mobileSettings: {
-        direction: "left",
-        speed: 40,
-      },
-    });
-
-    return () => {
-      marquee.destroy();
-    };
-  }, []);
+  if (!data || data.length === 0) return null;
 
   return (
     <div className="marq_container">
-      <div className="image_wrapper">
+      <Marquee speed={40} pauseOnHover gradient={false}>
         {data.map((item) => (
           <div className="image_item" key={item.id}>
             <img src={item.image} alt="logo" />
           </div>
         ))}
-      </div>
+      </Marquee>
     </div>
   );
 };

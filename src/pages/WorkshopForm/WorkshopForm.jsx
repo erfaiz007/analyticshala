@@ -241,7 +241,7 @@ const WorkshopForm = () => {
         </div>
 
         <div className="button_wrapper">
-          <button type="submit">Submit Form</button>
+          <button type="submit">Proceed</button>
         </div>
       </form>
 
