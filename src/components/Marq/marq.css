@@ -1,16 +1,30 @@
-@import "node_modules/vanilla-infinite-marquee/infinite-marquee.css";
-
 .marq_container {
-  padding: 0.5rem 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.75rem 0;
 }
 
+/* This class is injected by the library */
 .marq_container .horizontal-marquee-inner {
+  display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
-.image_wrapper img {
+.image_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.image_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_item img {
   height: 50px;
   width: 50px;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   object-fit: cover;
 }

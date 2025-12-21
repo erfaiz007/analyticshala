@@ -1,0 +1,88 @@
+.notfound_wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f7fb, #eef1f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.notfound_card {
+  background: #ffffff;
+  max-width: 420px;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  border-radius: 1.25rem;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.4s ease;
+}
+
+.notfound_code {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #6c5ce7;
+  margin-bottom: 0.5rem;
+}
+
+.notfound_card h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2b2f38;
+  margin-bottom: 0.75rem;
+}
+
+.notfound_card p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.notfound_card button {
+  border: none;
+  outline: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #6c5ce7, #5a4bdc);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(108, 92, 231, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.notfound_card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(108, 92, 231, 0.45);
+}
+
+.notfound_card button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.35);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .notfound_card {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .notfound_code {
+    font-size: 3rem;
+  }
+}

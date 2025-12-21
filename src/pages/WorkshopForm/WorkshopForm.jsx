@@ -1,12 +1,11 @@
-import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./WorkshopForm.css";
-
-import { FormErrors, FormValues } from "../../types";
 import { useNavigate } from "react-router-dom";
 
 const WorkshopForm = () => {
   const navigate = useNavigate();
-  const [formValue, setFormValue] = useState<FormValues>({
+
+  const [formValue, setFormValue] = useState({
     name: "",
     email: "",
     phone: "",
@@ -14,7 +13,8 @@ const WorkshopForm = () => {
     mode: "",
     about: "",
   });
-  const [errors, setErrors] = useState<FormErrors>({});
+
+  const [errors, setErrors] = useState({});
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const WorkshopForm = () => {
     }
   }, [showSuccess]);
 
-  const handleFormChange = (e: ChangeEvent<HTMLInputElement>): void => {
+  const handleFormChange = (e) => {
     setFormValue((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -39,8 +39,8 @@ const WorkshopForm = () => {
     }));
   };
 
-  const validateForm = (): FormErrors => {
-    const newErrors: FormErrors = {};
+  const validateForm = () => {
+    const newErrors = {};
 
     if (!formValue.name.trim()) {
       newErrors.name = "Full name is required";
@@ -54,7 +54,7 @@ const WorkshopForm = () => {
 
     if (!formValue.phone) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^\d{11}$/.test(formValue.phone)) {
+    } else if (!/^\d{10}$/.test(formValue.phone)) {
       newErrors.phone = "Phone number must be 10 digits";
     }
 
@@ -69,12 +69,10 @@ const WorkshopForm = () => {
     return newErrors;
   };
 
-  const handleFormSubmit = async (
-    e: FormEvent<HTMLFormElement>
-  ): Promise<void> => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Submit clicked"); // 👈 confirms handler runs
+    console.log("Submit clicked");
 
     const validationErrors = validateForm();
     setErrors(validationErrors);
@@ -131,7 +129,8 @@ const WorkshopForm = () => {
 
   return (
     <div className="form_wrapper">
-      <h2 className="form_title">{"Test title"}</h2>
+      <h2 className="form_title">Test title</h2>
+
       <form onSubmit={handleFormSubmit} noValidate>
         <div className="input_group">
           <label htmlFor="name">Full Name</label>
@@ -178,11 +177,9 @@ const WorkshopForm = () => {
             id="age"
             type="text"
             name="age"
-            value={formValue.age || ""}
+            value={formValue.age}
             onChange={handleFormChange}
-            className={errors.age ? "error" : ""}
           />
-          {errors.age && <small>{errors.age}</small>}
         </div>
 
         <div className="input_group_radio">

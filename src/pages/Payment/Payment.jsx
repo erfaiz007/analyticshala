@@ -1,28 +1,20 @@
 import "./Payment.css";
 import { useLocation } from "react-router-dom";
 
-declare global {
-  interface Window {
-    Razorpay: any;
-  }
-}
-
+/* Razorpay is loaded via script tag */
 const Payment = () => {
-  const { state } = useLocation() as {
-    state: {
-      orderId: string;
-      amount: number;
-      user: {
-        name: string;
-        email: string;
-        phone: string;
-      };
-    };
-  };
+  const { state } = useLocation();
 
   const openRazorpay = () => {
+    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
+
+    if (!razorpayKey) {
+      alert("Razorpay key not found. Check environment variables.");
+      return;
+    }
+
     const options = {
-      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      key: razorpayKey,
       amount: state.amount,
       currency: "INR",
       name: "Workshop Registration",
@@ -33,7 +25,7 @@ const Payment = () => {
         email: state.user.email,
         contact: state.user.phone,
       },
-      handler: function (response: any) {
+      handler: function (response) {
         console.log("Payment success:", response);
         window.location.href = "/payment-success";
       },
@@ -41,11 +33,6 @@ const Payment = () => {
         color: "#6c5ce7",
       },
     };
-
-    if (!options.key) {
-      alert("Razorpay key not found. Check environment variables.");
-      return;
-    }
 
     const rzp = new window.Razorpay(options);
     rzp.open();

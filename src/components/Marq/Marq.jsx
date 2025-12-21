@@ -1,20 +1,19 @@
 import { useEffect } from "react";
 import InfiniteMarquee from "vanilla-infinite-marquee";
-
-// import CSS
 import "./marq.css";
 
 const Marq = ({ data }) => {
   useEffect(() => {
     const marquee = new InfiniteMarquee({
-      element: ".image_wrapper",
-      speed: 50000,
-      smoothEdges: true,
+      element: ".marq_container",
+      speed: 60,
       direction: "left",
       duplicateCount: 2,
+      smoothEdges: true,
+      pauseOnHover: true,
       mobileSettings: {
-        direction: "top",
-        speed: 60000,
+        direction: "left",
+        speed: 40,
       },
     });
 
@@ -27,7 +26,9 @@ const Marq = ({ data }) => {
     <div className="marq_container">
       <div className="image_wrapper">
         {data.map((item) => (
-          <img key={item.id} src={item.image} alt="logo" />
+          <div className="image_item" key={item.id}>
+            <img src={item.image} alt="logo" />
+          </div>
         ))}
       </div>
     </div>
