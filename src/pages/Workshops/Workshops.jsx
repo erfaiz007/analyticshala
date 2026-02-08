@@ -2,7 +2,7 @@ import "./workshops.css";
 
 // import appData
 import { workshopData } from "../../../appData";
-import WorkshopCard from "../../components/workshopCard/workshopCard";
+import WorkshopCard from "../../components/WorkshopCard/WorkshopCard";
 
 const Workshops = () => {
   return (
