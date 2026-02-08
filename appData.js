@@ -148,57 +148,6 @@ export const workshopData = {
   ],
 };
 
-export const projectsData = [
-  {
-    id: 0,
-    image: "/assets/projects/project1.PNG",
-    name: "Landing UI",
-    desc: "A landing page for Bike website",
-    github: "https://github.com/SonuAkhtar/Start",
-    live: "https://talkeasy-ai.vercel.app/",
-  },
-  {
-    id: 1,
-    image: "/assets/projects/project2.PNG",
-    name: "WorkBuddy",
-    desc: "Workspace for freelancers",
-    github: "https://github.com/SonuAkhtar/BikeHomeUI",
-    live: "https://sonuakhtar.github.io/BikeHomeUI/",
-  },
-  {
-    id: 2,
-    image: "/assets/projects/project3.PNG",
-    name: "Start UI",
-    desc: "A landing page UI",
-    github: "https://github.com/SonuAkhtar/Start",
-    live: "https://start-sonu.vercel.app/",
-  },
-  {
-    id: 3,
-    image: "/assets/projects/project4.PNG",
-    name: "TalkEasy",
-    desc: "AI based conversation app",
-    github: "https://github.com/SonuAkhtar/talkeasy",
-    live: "https://talkeasy-ai.vercel.app",
-  },
-  {
-    id: 4,
-    image: "/assets/projects/project5.PNG",
-    name: "RealState UI",
-    desc: "Real-esate Landing UI",
-    github: "https://github.com/SonuAkhtar/LandingPageUI",
-    live: "https://sonuakhtar.github.io/BikeHomeUI/",
-  },
-  {
-    id: 5,
-    image: "/assets/projects/project6.PNG",
-    name: "BikeCar UI",
-    desc: "A landing page for Bike website",
-    github: "https://github.com/SonuAkhtar/CarsBikeUI",
-    live: "https://sonuakhtar.github.io/CarsBikeUI/",
-  },
-];
-
 export const imagesData = [
   {
     id: 0,
