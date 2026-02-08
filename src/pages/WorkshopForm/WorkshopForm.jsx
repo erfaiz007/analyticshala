@@ -83,7 +83,7 @@ const WorkshopForm = () => {
         method: "POST",
         body: new URLSearchParams({
           action: "createOrder",
-          amount: 100,
+          amount: 1,
         }),
       });
 
