@@ -45,7 +45,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #7c6cff;
+  border-color: var(--dark-1);
   box-shadow: 0 0 0 4px rgba(124, 108, 255, 0.15);
 }
 
@@ -91,11 +91,11 @@ input:focus {
 }
 
 .choice_card:hover {
-  border-color: #7c6cff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
 
 .choice_card.active {
-  background: #7c6cff;
+  background: var(--dark-1);
   color: white;
   border: none;
 }

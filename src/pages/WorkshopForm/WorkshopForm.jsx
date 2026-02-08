@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./WorkshopForm.css";
+
+import { GOOGLESHEET_WEB_APP_URL } from "../../config";
 import { useNavigate } from "react-router-dom";
 
 const WorkshopForm = () => {
@@ -64,7 +66,7 @@ const WorkshopForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Values :", import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL);
+    console.log("Values :", GOOGLESHEET_WEB_APP_URL);
 
     const validation = validate();
     setErrors(validation);
@@ -79,25 +81,31 @@ const WorkshopForm = () => {
     try {
       setIsSubmitting(true);
 
-      const res = await fetch(import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL, {
+      const res = await fetch(GOOGLESHEET_WEB_APP_URL, {
         method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
         body: new URLSearchParams({
           action: "createOrder",
-          amount: 1,
+          workshopId: "excel_bootcamp",
         }),
       });
 
-      const text = await res.text();
-      console.log("RAW RESPONSE:", text);
+      const contentType = res.headers.get("content-type");
 
-      let result;
-      try {
-        result = JSON.parse(text);
-      } catch {
-        throw new Error("Server did not return JSON");
+      if (!contentType?.includes("application/json")) {
+        const text = await res.text();
+        console.error("Expected JSON, got:", text);
+        throw new Error("Server returned non-JSON response");
       }
 
-      if (!result.success) throw new Error("Order creation failed");
+      const result = await res.json();
+
+      if (!result.success) {
+        console.error("SERVER RESPONSE:", result);
+        throw new Error(result.message || "Order creation failed");
+      }
 
       navigate("/payment", {
         state: {

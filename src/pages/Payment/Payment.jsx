@@ -1,4 +1,6 @@
 import "./Payment.css";
+
+import { GOOGLESHEET_WEB_APP_URL, RAZORPAY_KEY_ID } from "../../config";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Payment = () => {
@@ -12,7 +14,7 @@ const Payment = () => {
   }
 
   const openRazorpay = () => {
-    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
+    const razorpayKey = RAZORPAY_KEY_ID;
 
     if (!razorpayKey) {
       alert("Razorpay key missing.");
@@ -36,7 +38,7 @@ const Payment = () => {
       handler: async function (response) {
         try {
           // ✅ SAVE ONLY AFTER PAYMENT
-          await fetch(import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL, {
+          await fetch(GOOGLESHEET_WEB_APP_URL, {
             method: "POST",
             body: new URLSearchParams({
               action: "saveRegistration",

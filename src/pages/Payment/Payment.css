@@ -6,7 +6,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 /* Card container */
@@ -32,13 +37,13 @@
 /* Sub text */
 .payment_subtext {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: #b1b2b4;
   margin-bottom: 2rem;
 }
 
 /* Amount box */
 .payment_amount {
-  background: #f8f9ff;
+  background: #f0f0f1;
   border-radius: 0.75rem;
   padding: 1.25rem;
   margin-bottom: 2rem;
@@ -54,7 +59,7 @@
 .payment_amount strong {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #6c5ce7;
+  color: var(--dark-1);
 }
 
 /* Pay button */
@@ -64,13 +69,15 @@
   outline: none;
   padding: 0.85rem 1rem;
   border-radius: 0.75rem;
-  background: linear-gradient(135deg, #6c5ce7, #5a4bdc);
+  background: var(--dark-1);
   color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 12px 30px rgba(108, 92, 231, 0.35);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .pay_button:hover {
