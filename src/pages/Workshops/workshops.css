@@ -1,7 +1,7 @@
 .workshops_container {
   max-width: 1200px;
   margin: auto;
-  padding: clamp(1.5rem, 4vw, 3rem);
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -11,7 +11,7 @@
 
 .workshops_container .upcoming,
 .workshops_container .previous {
-  padding: clamp(1.2rem, 2vw, 2rem);
+  padding: 1rem;
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
