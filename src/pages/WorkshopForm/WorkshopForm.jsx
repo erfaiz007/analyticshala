@@ -64,6 +64,8 @@ const WorkshopForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("Values :", import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL);
+
     const validation = validate();
     setErrors(validation);
 
