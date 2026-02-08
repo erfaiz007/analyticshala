@@ -3,7 +3,7 @@
 }
 
 /* Responsive design for mobile */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .menuMobile_container {
     position: absolute;
     top: 10vh;

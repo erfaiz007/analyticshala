@@ -17,7 +17,7 @@ const Courses = ({ setShowDownload }) => {
 
         <main>
           {coursesData.map((course) => (
-            <div key={course.id} className="course_card">
+            <div key={course.id} className="course_card clickable">
               <div className="course_card_left">
                 <img
                   className="course_card_left_image"

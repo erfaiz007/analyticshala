@@ -22,9 +22,9 @@
   height: 80vh;
   width: 80%;
   background-color: var(--off-white);
-  color: var(--off-dark);
+  color: var(--dark-1);
   padding: 2rem;
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@
   font-size: 1.1rem;
   border-radius: 50%;
   cursor: pointer;
-  background-color: var(--off-dark);
+  background-color: var(--dark-1);
   color: var(--off-white);
   display: flex;
   align-items: center;
@@ -90,14 +90,14 @@
   font-size: 1.1rem;
   min-width: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
 }
 
 .download_wrapper form button {
   position: relative;
   outline: none;
   border: none;
-  background-color: var(--off-dark);
+  background-color: var(--dark-1);
   color: var(--off-white);
   width: 300px;
   padding: 0.75rem;
@@ -112,8 +112,8 @@
 }
 
 .download_wrapper form button:hover {
-  border-color: var(--off-dark);
-  color: var(--off-dark);
+  border-color: var(--dark-1);
+  color: var(--dark-1);
   z-index: 1;
 }
 
@@ -134,7 +134,7 @@
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .download_wrapper {
     height: 90vh;
     width: 90%;

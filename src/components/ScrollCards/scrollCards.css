@@ -95,14 +95,15 @@ section.scrollCards {
   justify-content: center;
 }
 
-.scrollCards .card_btn a {
+.scrollCards .card_btn button {
+  max-width: 250px;
   margin-top: 2rem;
   font-size: 1rem;
   color: #fafafa;
   padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   cursor: pointer;
-  background: #333;
+  background: #111827;
   transition: all 0.3s ease-in-out;
 }
 
@@ -111,7 +112,7 @@ section.scrollCards {
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .scrollCards .sectionHeader {
     font-size: 0.75rem;
   }

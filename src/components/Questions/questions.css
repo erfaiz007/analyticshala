@@ -13,7 +13,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
-  border: 2px solid var(--off-dark);
+  border: 2px solid var(--dark-1);
   width: 100%;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -21,7 +21,7 @@
 
 .question_item.active {
   /* height: 22vh; */
-  background-color: var(--off-dark);
+  background-color: var(--dark-1);
   color: var(--off-white);
 }
 
@@ -47,7 +47,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: var(--off-dark);
+  background-color: var(--dark-1);
   color: var(--off-white);
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   section.questions {
     padding: 5vh 0;
   }

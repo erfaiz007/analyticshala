@@ -20,7 +20,7 @@
 
 .subtitle {
   color: #667085;
-  margin-bottom: 2rem;
+  margin: 1rem 0 2rem 0;
 }
 
 /* GRID */
@@ -108,7 +108,7 @@ button {
   padding: 1rem;
   border-radius: 12px;
   border: none;
-  background: #7c6cff;
+  background: var(--dark-1);
   color: white;
   font-weight: 600;
   font-size: 1rem;

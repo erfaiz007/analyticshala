@@ -18,7 +18,9 @@
   max-width: 100px;
   object-fit: contain;
   border-radius: 0.5rem;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 /* Hover effect */
@@ -28,7 +30,7 @@
 }
 
 /* Mobile adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .image_item {
     margin: 0 1rem;
   }

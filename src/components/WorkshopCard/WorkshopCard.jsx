@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./workshopCard.css";
 
 const WorkshopCard = (props) => {
+  console.log("Propss:", props);
   return (
     <div className="WorkshopCard_wrapper">
       <div className="card_left">
@@ -15,13 +16,15 @@ const WorkshopCard = (props) => {
           <p className="event_date">{props.date}</p>
           <p className="event_time">{props.time}</p>
           <div className="event_mode">
-            {props.eventMode.map((mode) => (
-              <span>{mode}</span>
+            {props.eventMode.map((mode, i) => (
+              <span key={i}>{mode}</span>
             ))}
           </div>
         </div>
 
-        <Link to="/workshop-details">Register Now</Link>
+        {props.type === "upcoming" && (
+          <Link to="/workshop-details">Register Now</Link>
+        )}
       </div>
     </div>
   );

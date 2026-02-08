@@ -59,9 +59,9 @@
   width: 100%;
 }
 
-.header .workshop_btn{
-  padding: .25rem .5rem;
-  border-radius: .25rem;
+.header .workshop_btn {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
   background-color: red;
 }
 
@@ -138,7 +138,7 @@
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .header .nav_logo {
     font-size: 1.5rem;
   }

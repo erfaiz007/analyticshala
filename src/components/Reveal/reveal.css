@@ -8,7 +8,7 @@
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .reveal_text {
     font-size: 2rem;
     line-height: 2.5rem;

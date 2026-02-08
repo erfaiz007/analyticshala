@@ -32,9 +32,9 @@ const ScrollCards = ({ setShowDownload }) => {
         </div>
 
         <div className="card_btn">
-          <a href="#" onClick={() => setShowDownload(true)}>
+          <button onClick={() => setShowDownload(true)}>
             Download Brochure
-          </a>
+          </button>
         </div>
       </div>
     </section>

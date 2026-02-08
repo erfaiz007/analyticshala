@@ -93,50 +93,6 @@ export const heroMarqData = [
   },
 ];
 
-export const worksData = [
-  {
-    id: 0,
-    icon: "fab fa-react",
-    name: "Frontend Developer",
-    features: [
-      "I Develop interactive UI Landing pages.",
-      "I Develop high peforming Web Apps.",
-      "I Design & Develop website animations",
-      "I Create responsive and attractive layouts",
-    ],
-  },
-  {
-    id: 1,
-    icon: "fab fa-node",
-    name: "Backend Developer",
-    features: [
-      "I Code efficient backend codes",
-      "I Create Rest API's for web apps",
-      "I Create connection of apps with Database",
-    ],
-  },
-  {
-    id: 2,
-    icon: "fas fa-th-large",
-    name: "UI/UX Designer",
-    features: [
-      "I design high quality User Interface",
-      "I design UX element Interactions",
-      "I design website animations",
-    ],
-  },
-  {
-    id: 3,
-    icon: "fas fa-pen",
-    name: "Logo Designer",
-    features: [
-      "I create high quality branding.",
-      "I make interactive layouts.",
-      "I create trendy & animated logos.",
-    ],
-  },
-];
-
 export const workshopData = {
   upcoming: [
     {
@@ -175,6 +131,14 @@ export const workshopData = {
     },
     {
       id: 1005,
+      image: "/assets/workshops/workshop-2.png",
+      title: "Data Warehousing for Data Engineering",
+      date: "December 21, Sunday",
+      time: "02:00 PM - 05:00 PM",
+      eventMode: ["Offline", "Online"],
+    },
+    {
+      id: 1006,
       image: "/assets/workshops/workshop-2.png",
       title: "Data Warehousing for Data Engineering",
       date: "December 21, Sunday",

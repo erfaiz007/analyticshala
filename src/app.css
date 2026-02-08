@@ -20,6 +20,10 @@
   --off-white: #e8f1f2;
   --off-dark: #164863;
   --light-dark: #8cd7ff;
+  --dark-1: #0f172a;
+  --dark-2: #111827;
+  --dark-3: #020617;
+
   --dark-bg: linear-gradient(50deg, #3789bf 0%, #2c3e50 0%);
 }
 
@@ -59,7 +63,7 @@ section {
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   section {
     padding: 3vh 1rem;
   }

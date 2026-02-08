@@ -12,7 +12,7 @@ const Workshops = () => {
 
         <main>
           {workshopData.upcoming.map((data) => (
-            <WorkshopCard {...data} key={data.id} />
+            <WorkshopCard {...data} key={data.id} type="upcoming" />
           ))}
         </main>
       </div>
@@ -22,7 +22,7 @@ const Workshops = () => {
 
         <main>
           {workshopData.previous.map((data) => (
-            <WorkshopCard {...data} key={data.id} />
+            <WorkshopCard {...data} key={data.id} type="previous" />
           ))}
         </main>
       </div>

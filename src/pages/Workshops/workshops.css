@@ -1,33 +1,48 @@
 .workshops_container {
-  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
-.workshops_container h2 {
-  font-weight: 500;
-}
-
-.workshops_container main {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
+/* Section blocks */
 
 .workshops_container .upcoming,
 .workshops_container .previous {
-  border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: clamp(1.2rem, 2vw, 2rem);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
-.workshops_container .upcoming {
-  background-color: #dafbda;
+/* Heading */
+
+.workshops_container h2 {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.3px;
 }
 
-.workshops_container .previous {
-  background-color: #f4d0d0;
+/* GRID */
+
+.workshops_container main {
+  margin-top: 1.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Optional subtle section accent */
+
+.upcoming {
+  border: 1px solid #a0f3be;
+  border-left: 6px solid #22c55e;
+}
+
+.previous {
+  border: 1px solid #f9c3c3;
+  border-left: 6px solid #ef4444;
 }
