@@ -1,5 +1,6 @@
 // imported CSS
 import "./hero.css";
+import { Link } from "react-router-dom";
 
 // imported Component
 import Marq from "../Marq/Marq";
@@ -18,7 +19,10 @@ const Hero = () => {
           <div className="shape single_line">Shape Your Future</div>
         </div>
         <div className="hero_buttons">
-          <a href="#contact">Contact Us</a>
+          <Link to="/workshops" className="shimmer_btn">
+            Upcoming Workshops
+          </Link>
+
           <a href="https://topmate.io/faizan_ansari007" target="_blank">
             Request a Demo
           </a>

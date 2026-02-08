@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: 90vh;
-  overflow: hidden;  
+  overflow: hidden;
   scroll-margin-top: 10vh;
 }
 
@@ -25,11 +25,11 @@
   font-weight: bold;
 }
 
-.hero_title .logo_name{
+.hero_title .logo_name {
   height: 64px;
 }
 
-.hero_title .logo_name img{
+.hero_title .logo_name img {
   height: 100%;
 }
 
@@ -91,6 +91,51 @@
   border-radius: 50%;
 }
 
+/* Make sure button can hold pseudo elements */
+.shimmer_btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* shimmer layer */
+.shimmer_btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+}
+
+/* animation */
+.shimmer_btn::before {
+  animation: shimmerMove 3s infinite;
+}
+
+@keyframes shimmerMove {
+  0% {
+    left: -120%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  100% {
+    left: 220%;
+  }
+}
+
 /* Responsive design */
 @media screen and (max-width: 600px) {
   .hero {
@@ -103,8 +148,12 @@
   }
 
   .hero_main .hero_title {
-    font-size: 2.5rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .hero_title .logo_name img {
+    height: 3rem;
   }
 
   .hero_buttons,
@@ -113,7 +162,7 @@
   }
 
   .hero_buttons a {
-    min-width: 150px;
+    min-width: 225px;
     padding: 0.5rem;
     font-size: 1.1rem;
   }

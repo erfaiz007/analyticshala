@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // Imported CSS
@@ -6,7 +6,7 @@ import "./homepage.css";
 
 // Imported components
 import Hero from "../../components/Hero/Hero";
-import Courses1 from "../../components/Courses1/Courses1";
+import Courses from "../../components/Courses/Courses";
 import ScrollCards from "../../components/ScrollCards/ScrollCards";
 import Skills from "../../components/Skills/Skills";
 import Testimony from "../../components/Testimony/Testimony";
@@ -21,27 +21,28 @@ function Homepage() {
 
   useEffect(() => {
     if (location.hash) {
-    const el = document.querySelector(location.hash);
-    if (el) {
-      setTimeout(() => {
-        const headerOffset = 100;
-        const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerOffset;
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          const headerOffset = 100;
+          const elementPosition =
+            el.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
-      }, 100);
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }, 100);
+      }
     }
-  }
   }, [location]);
 
   return (
     <>
       <Download showDownload={showDownload} setShowDownload={setShowDownload} />
       <Hero />
-      <Courses1 setShowDownload={setShowDownload} />
+      <Courses setShowDownload={setShowDownload} />
       <ScrollCards setShowDownload={setShowDownload} />
       <Skills />
       <Testimony />

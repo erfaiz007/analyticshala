@@ -1,69 +1,53 @@
-import { useState } from "react";
-
-// import appData
-import { coursesData } from "../../../appData";
-
 // import CSS
 import "./courses.css";
 
 // import Components
 import SectionHeader from "../SectionHeader/SectionHeader";
 
-const Courses = () => {
-  const [selectedCourse, setSelectedCourse] = useState(coursesData);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const courseCategory = [
-    "All",
-    "Data Analytics",
-    "Visualization",
-    "Web Development",
-  ];
+// import appData
+import { coursesData } from "../../../appData";
 
-  const handleCategoryClick = (type) => {
-    setSelectedCategory(type);
-
-    const filteredCourses = coursesData.filter((course) => {
-      return course.category === type;
-    });
-
-    if (type === "All") {
-      setSelectedCourse(coursesData);
-    } else {
-      setSelectedCourse(filteredCourses);
-    }
-  };
-
+//import images
+import courseImage from "/assets/courses/visual.jpg";
+const Courses = ({ setShowDownload }) => {
   return (
     <section className="courses" id="courses">
       <div className="container">
         <SectionHeader number="01" title="Review the" subtitle="Courses" />
 
-        <div className="course_nav">
-          {courseCategory.map((course, index) => (
-            <button
-              key={index}
-              className={`${selectedCategory === course ? "active" : ""}`}
-              onClick={() => handleCategoryClick(course)}
-            >
-              {course}
-            </button>
-          ))}
-        </div>
-        <div className="course_cards">
-          {selectedCourse.map((course, index) => (
-            <div key={index} className="course_card">
-              <div className="course_category_number">
-                <span className="course_category">{course.category}</span>
-                <span className="course_number">{course.number}</span>
+        <main>
+          {coursesData.map((course) => (
+            <div key={course.id} className="course_card">
+              <div className="course_card_left">
+                <img
+                  className="course_card_left_image"
+                  src={courseImage}
+                  alt="course image"
+                />
+                <div className="card_left_name">Course</div>
+                <div className="card_left_title">
+                  <span>0{course.id}</span>
+                  {course.title}
+                </div>
               </div>
-              <div className="course_info">
-                <h2>{course.title}</h2>
-                <p>{course.subtitle}</p>
+              <div className="course_card_right">
+                <div className="card_right_name">Subjects</div>
+                <div className="card_right_chapters">
+                  {course.chapters.map((chapter, i) => (
+                    <span key={i}>{chapter}</span>
+                  ))}
+                  ...
+                </div>
+
+                <div className="course_right_view">
+                  <a href="#" onClick={() => setShowDownload(true)}>
+                    Download Brochure <i className="fas fa-chevron-right" />
+                  </a>
+                </div>
               </div>
-              <button className="course_btn">Know more</button>
             </div>
           ))}
-        </div>
+        </main>
       </div>
     </section>
   );

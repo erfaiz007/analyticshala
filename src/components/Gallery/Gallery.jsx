@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 // import Components
-import Courses1 from "../Courses1/Courses1";
+import Courses from "../Courses/Courses";
 
 const Gallery = () => {
   useGSAP(() => {
@@ -29,28 +29,28 @@ const Gallery = () => {
         {
           top: "-50%",
         },
-        "header"
+        "header",
       )
       .to(
         ".bottom",
         {
           bottom: "-50%",
         },
-        "header"
+        "header",
       )
       .to(
         ".top-h",
         {
           top: "130%",
         },
-        "header"
+        "header",
       )
       .to(
         ".bottom-h",
         {
           bottom: "-30%",
         },
-        "header"
+        "header",
       )
       .to(".content", {
         top: "0",
@@ -65,7 +65,7 @@ const Gallery = () => {
         </div>
         <div className="center">
           <div className="content">
-            <Courses1 />
+            <Courses />
           </div>
         </div>
         <div className="bottom">
