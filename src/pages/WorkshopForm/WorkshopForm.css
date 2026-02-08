@@ -1,4 +1,4 @@
-.premium_wrapper {
+.workshopForm_wrapper {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -8,7 +8,7 @@
   font-family: Inter, sans-serif;
 }
 
-.premium_card {
+.workshopForm_card {
   width: 100%;
   max-width: 760px;
   background: rgba(255, 255, 255, 0.75);
@@ -128,7 +128,7 @@ button:disabled {
 /* MOBILE */
 
 @media (max-width: 640px) {
-  .premium_card {
+  .workshopForm_card {
     padding: 1.6rem;
   }
 

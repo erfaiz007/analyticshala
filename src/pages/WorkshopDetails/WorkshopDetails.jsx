@@ -12,7 +12,7 @@ const WorkshopDetails = () => {
           <h1>AI & Data Engineering Workshop</h1>
           <p>Build production-ready data systems with industry experts.</p>
 
-          <Link to="/workshop-form" className="hero_cta">
+          <Link to="/workshop-form/#workshopForm" className="hero_cta">
             Register Now →
           </Link>
         </div>
@@ -56,7 +56,7 @@ const WorkshopDetails = () => {
             <strong>Faizan Ansari</strong>
             <span> AI Instructor</span>
 
-            <Link to="/workshop-form" className="cta_big">
+            <Link to="/workshop-form/#workshopForm" className="cta_big">
               Secure Your Seat →
             </Link>
           </div>

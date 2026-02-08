@@ -79,11 +79,11 @@ const Payment = () => {
 
         <div className="payment_amount">
           <span>Amount to Pay</span>
-          <strong>₹{state.amount / 100}</strong>
+          <strong>₹{state.amount}</strong>
         </div>
 
         <button className="pay_button" onClick={openRazorpay}>
-          Pay ₹{state.amount / 100}
+          Pay ₹{state.amount}
         </button>
 
         <div className="payment_secure">

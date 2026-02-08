@@ -123,8 +123,8 @@ const WorkshopForm = () => {
   };
 
   return (
-    <div className="premium_wrapper">
-      <div className="premium_card">
+    <div className="workshopForm_wrapper" id="workshopForm">
+      <div className="workshopForm_card">
         <h1>Workshop Registration</h1>
         <p className="subtitle">Secure your seat in under 30 seconds.</p>
 
