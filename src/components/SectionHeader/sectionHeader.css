@@ -19,15 +19,44 @@
 .sectionHeader h1 {
   font-weight: 300;
 }
+
 /* Responsive design */
 @media screen and (max-width: 600px) {
   .sectionHeader {
-    gap: 0.2rem;
     margin-bottom: 1rem;
     font-size: 0.8rem;
   }
 
   .sectionHeader span {
     width: 40px;
+  }
+
+  .sectionHeader h1,
+  .sectionHeader h2 {
+    margin: 0;
+    line-height: 110%;
+  }
+}
+
+/* Responsive design */
+@media screen and (max-width: 480px) {
+  .sectionHeader {
+    gap: 0.25rem;
+  }
+
+  .sectionHeader .sectionHeader_number {
+    font-size: 1.5rem;
+  }
+
+  .sectionHeader span {
+    width: 20px;
+  }
+
+  .sectionHeader h1 {
+    font-size: 1.25rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 1.1rem;
   }
 }

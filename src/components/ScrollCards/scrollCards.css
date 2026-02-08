@@ -73,6 +73,7 @@ section.scrollCards {
 .scrollCard_item .card_number {
   font-size: 4rem;
   color: #888;
+  opacity: 0.5;
 }
 
 .scrollCard_item .card_title {
@@ -135,13 +136,12 @@ section.scrollCards {
   }
 
   .scrollCards_all .scrollCard_item:nth-child(1),
-    .scrollCards_all .scrollCard_item:nth-child(2),
-      .scrollCards_all .scrollCard_item:nth-child(3),
-        .scrollCards_all .scrollCard_item:nth-child(4),
-          .scrollCards_all .scrollCard_item:nth-child(5) {
+  .scrollCards_all .scrollCard_item:nth-child(2),
+  .scrollCards_all .scrollCard_item:nth-child(3),
+  .scrollCards_all .scrollCard_item:nth-child(4),
+  .scrollCards_all .scrollCard_item:nth-child(5) {
     top: 0;
   }
-
 
   .scrollCard_item .card_number {
     font-size: 2.5rem;

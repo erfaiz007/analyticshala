@@ -13,6 +13,7 @@ import "./reveal.css";
 
 // import Components
 import SectionHeader from "../SectionHeader/SectionHeader";
+import { aboutUsText } from "../../../appData";
 
 const Reveal = () => {
   const triggerRef = useRef(null);
@@ -42,16 +43,13 @@ const Reveal = () => {
   };
   const setLetters = useLettersArray();
 
-  const text =
-    "At AnalyticShala, we offer engaging courses in analytics, data visualization, and web development, helping you gain the skills to excel in today’s data-driven world. Join us and unlock your potential!";
-
   return (
     <section className="reveal" id="reveal">
       <div className="container">
         <SectionHeader number="01" title="Know" subtitle="About Us" />
 
         <div ref={triggerRef}>
-          {text.split("").map((letter, index) => (
+          {aboutUsText.split("").map((letter, index) => (
             <span className="reveal_text" key={index} ref={setLetters}>
               {letter}
             </span>

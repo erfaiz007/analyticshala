@@ -5,7 +5,12 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 /* Card */
@@ -75,7 +80,7 @@
 }
 
 /* Responsive */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .courses_card {
     padding: 2.25rem 1.75rem;
   }

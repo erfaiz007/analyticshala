@@ -16,7 +16,11 @@ const Contact = () => {
             {contactData.map((data, i) => (
               <div key={i} className="contact_sub_info">
                 <div className="contact_info_title">
-                  <img src={data.icon} alt={data.alt} />
+                  <img
+                    className="contact_icon"
+                    src={data.icon}
+                    alt={data.alt}
+                  />
                   <h3>{data.name}</h3>
                 </div>
                 {data.href ? (
@@ -26,6 +30,14 @@ const Contact = () => {
                 )}
               </div>
             ))}
+          </div>
+          <div className="contact_qr">
+            <span className="qr_wrapper">
+              <img src="/analyticShala-Insta-qr.jpeg" alt="insta image" />
+            </span>
+            <span className="qr_wrapper">
+              <img src="/analyticShala-whatsapp-qr.jpeg" alt="whatsapp image" />
+            </span>
           </div>
         </main>
       </div>

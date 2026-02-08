@@ -392,7 +392,7 @@ export const skillsData = [
 export const teamData = [
   {
     id: 1,
-    name: "Waseem Ansari",
+    name: "Waseem Ahmad",
     position: "Founder",
     profile: "WASEEM",
     image: "/assets/hobbies/dev_2.jpg",
@@ -420,6 +420,32 @@ export const teamData = [
   },
   {
     id: 3,
+    name: "Aishvarya Joshi",
+    position: "Business Development Manager",
+    profile: "AISHVARYA",
+    image: "/assets/hobbies/dev_3.jpg",
+    social: [
+      {
+        href: "https://www.linkedin.com/in/zahid-hussain-a6a216a0/",
+        iconClass: "fab fa-linkedin-in",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Tanfiz Hussain",
+    position: "Business Development Manager",
+    profile: "TRNFIZ",
+    image: "/assets/hobbies/dev_3.jpg",
+    social: [
+      {
+        href: "https://www.linkedin.com/in/zahid-hussain-a6a216a0/",
+        iconClass: "fab fa-linkedin-in",
+      },
+    ],
+  },
+  {
+    id: 5,
     name: "Riyaz Akhtar",
     position: "Web Developer, Trainer",
     profile: "RIYAZ",
@@ -431,19 +457,6 @@ export const teamData = [
       },
       {
         href: "https://www.linkedin.com/in/riyaz-akhtar-03bb59129/",
-        iconClass: "fab fa-linkedin-in",
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Zahid Hussain",
-    position: "Business Development Manager",
-    profile: "ZAHID",
-    image: "/assets/hobbies/dev_3.jpg",
-    social: [
-      {
-        href: "https://www.linkedin.com/in/zahid-hussain-a6a216a0/",
         iconClass: "fab fa-linkedin-in",
       },
     ],
@@ -514,7 +527,7 @@ export const testimonyData = [
 export const coursesData = [
   {
     id: 1,
-    title: "Data Analytics & Visualization",
+    title: "Generative AI Development",
     chapters: [
       "Advanced-Excel",
       "SQL/Advanced SQL",
@@ -523,7 +536,7 @@ export const coursesData = [
   },
   {
     id: 2,
-    title: "Data Analytics with Python",
+    title: "Data Analytics & Visualisation",
     chapters: [
       "SQL/Advanced SQL",
       "Python",
@@ -534,20 +547,24 @@ export const coursesData = [
   },
   {
     id: 3,
+    title: "Data Analytics with Python",
+    chapters: [
+      "SQL/Advanced SQL",
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Seabond/Metplotlib",
+    ],
+  },
+  {
+    id: 4,
     title: "Web Development",
     chapters: ["HTML", "CSS", "JavaScript", "ReactJS", "NextJS"],
   },
   {
-    id: 4,
-    title: "Exclusive Courses",
-    chapters: [
-      "Prompt Engineering",
-      "Gen-AI",
-      "NLP",
-      "Text Analytics",
-      "LLM",
-      "Machine Learning",
-    ],
+    id: 5,
+    title: "Data Science and AI for Managers and Above",
+    chapters: ["Coming Soon"],
   },
 ];
 
@@ -607,3 +624,6 @@ export const scrollCardsData = [
     info: "Work on live projects based on the courses you have learned, and skills you have practiced.",
   },
 ];
+
+export const aboutUsText =
+  "At AnalyticShala, we empower learners to thrive in today’s data-driven and AI-powered world. We offer industry-focused courses in Data Analytics, Data Science, Artificial Intelligence, Generative AI, Data Visualization, and Web Development, designed to turn concepts into real-world skills. Our programs blend hands-on learning, practical projects, and real-life use cases, helping you build strong foundations and stay ahead in a rapidly evolving tech landscape. Whether you’re starting your journey or upskilling for the next big opportunity, AnalyticShala is your partner in growth. Learn. Build. Transform your future with AnalyticShala.";

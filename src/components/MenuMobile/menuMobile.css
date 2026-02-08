@@ -13,7 +13,7 @@
     height: 92vh;
     background-color: #222;
     transition: all 0.5s ease-in-out;
-    transform: translateX(-100vh);
+    transform: translateX(-100vw);
     border-top: 1px solid #fff;
   }
 

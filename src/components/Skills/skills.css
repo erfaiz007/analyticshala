@@ -37,13 +37,15 @@
 }
 
 .skills_data {
-  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
   background-color: #333;
   color: #fff;
+  border-radius: 0.25rem;
 }
 
 .skills_data_item {
@@ -61,6 +63,10 @@
 
 .skills_number span {
   font-size: 1.5rem;
+}
+
+.skills_info {
+  font-size: 1.25rem;
 }
 
 .skills_bottom {
@@ -108,7 +114,7 @@
 .skills_type_title {
   font-size: 1.25rem;
   font-weight: 500;
-  margin-top: 0.5rem
+  margin-top: 0.5rem;
 }
 
 .skills_type_subtitle {
@@ -171,9 +177,9 @@
   }
 
   .skills_type_item:nth-child(1)::before,
-.skills_type_item:nth-child(2)::before,
-.skills_type_item:nth-child(3)::before {
-  left: 15%;
-  width: 80%;
-}
+  .skills_type_item:nth-child(2)::before,
+  .skills_type_item:nth-child(3)::before {
+    left: 15%;
+    width: 80%;
+  }
 }
