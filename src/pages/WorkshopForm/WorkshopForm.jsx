@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./WorkshopForm.css";
 import { useNavigate } from "react-router-dom";
 
@@ -10,246 +10,203 @@ const WorkshopForm = () => {
     email: "",
     phone: "",
     age: "",
+    status: "",
     mode: "",
-    about: "",
+    analyticshalaStudent: "",
   });
 
   const [errors, setErrors] = useState({});
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    if (showSuccess) {
-      const timer = setTimeout(() => {
-        setShowSuccess(false);
-      }, 2500);
+  // ✅ HANDLE CHANGE
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-      return () => clearTimeout(timer);
-    }
-  }, [showSuccess]);
-
-  const handleFormChange = (e) => {
     setFormValue((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
 
     setErrors((prev) => ({
       ...prev,
-      [e.target.name]: undefined,
+      [name]: value ? undefined : "Required",
     }));
   };
 
-  const validateForm = () => {
-    const newErrors = {};
+  // ✅ VALIDATION
+  const validate = () => {
+    const err = {};
 
-    if (!formValue.name.trim()) {
-      newErrors.name = "Full name is required";
-    }
+    if (!formValue.name.trim()) err.name = "Full name is required";
 
-    if (!formValue.email) {
-      newErrors.email = "Email is required";
+    if (!formValue.email.trim()) {
+      err.email = "Email is required";
     } else if (!/^\S+@\S+\.\S+$/.test(formValue.email)) {
-      newErrors.email = "Enter a valid email address";
+      err.email = "Enter a valid email";
     }
 
-    if (!formValue.phone) {
-      newErrors.phone = "Phone number is required";
+    if (!formValue.phone.trim()) {
+      err.phone = "Phone is required";
     } else if (!/^\d{10}$/.test(formValue.phone)) {
-      newErrors.phone = "Phone number must be 10 digits";
+      err.phone = "Enter a valid 10-digit number";
     }
 
-    if (!formValue.mode) {
-      newErrors.mode = "Please select a mode";
-    }
+    if (!formValue.age) err.age = "Age is required";
+    if (!formValue.status) err.status = "Select your status";
+    if (!formValue.mode) err.mode = "Select a mode";
+    if (!formValue.analyticshalaStudent)
+      err.analyticshalaStudent = "Please select";
 
-    if (!formValue.about) {
-      newErrors.about = "Please tell us about yourself";
-    }
-
-    return newErrors;
+    return err;
   };
 
-  const handleFormSubmit = async (e) => {
+  // ✅ SUBMIT → CREATE ORDER ONLY
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Submit clicked");
+    const validation = validate();
+    setErrors(validation);
 
-    const validationErrors = validateForm();
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length !== 0) {
-      console.log("Validation failed", validationErrors);
+    if (Object.keys(validation).length) {
+      document
+        .querySelector(".error_input, .choice_error")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" });
       return;
     }
 
     try {
-      console.log("Sending data to backend...", formValue);
+      setIsSubmitting(true);
 
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbw_FXe6DCfl13atbm8fYzDkjP-AbCoj6T19Crr74kWF7Zv7aj6xWD5kF3drGWPeqfjR/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify({
-            ...formValue,
-            amount: 9,
-          }),
-        }
-      );
+      const res = await fetch(import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL, {
+        method: "POST",
+        body: new URLSearchParams({
+          action: "createOrder",
+          amount: 100,
+        }),
+      });
 
-      console.log("Response status:", response.status);
+      const result = await res.json();
 
-      if (!response.ok) {
-        const text = await response.text();
-        console.error("Backend error:", text);
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      if (!result.success) throw new Error("Order creation failed");
 
-      const result = await response.json();
-      console.log("Backend result:", result);
-
-      if (result.success) {
-        setShowSuccess(true);
-
-        setTimeout(() => {
-          navigate("/payment", {
-            state: {
-              orderId: result.orderId,
-              amount: result.amount,
-              user: formValue,
-            },
-          });
-        }, 2500);
-      }
-    } catch (error) {
-      console.error("Form submission failed:", error);
-      alert("Submission failed. Please try again.");
+      navigate("/payment", {
+        state: {
+          orderId: result.orderId,
+          amount: result.amount,
+          user: formValue,
+        },
+      });
+    } catch (err) {
+      alert("Unable to start payment. Try again.");
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="form_wrapper">
-      <h2 className="form_title">Test title</h2>
+    <div className="premium_wrapper">
+      <div className="premium_card">
+        <h1>Workshop Registration</h1>
+        <p className="subtitle">Secure your seat in under 30 seconds.</p>
 
-      <form onSubmit={handleFormSubmit} noValidate>
-        <div className="input_group">
-          <label htmlFor="name">Full Name</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            value={formValue.name}
-            onChange={handleFormChange}
-            className={errors.name ? "error" : ""}
-          />
-          {errors.name && <small>{errors.name}</small>}
-        </div>
-
-        <div className="input_group">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={formValue.email}
-            onChange={handleFormChange}
-            className={errors.email ? "error" : ""}
-          />
-          {errors.email && <small>{errors.email}</small>}
-        </div>
-
-        <div className="input_group">
-          <label htmlFor="phone">Phone Number</label>
-          <input
-            id="phone"
-            type="text"
-            name="phone"
-            value={formValue.phone}
-            onChange={handleFormChange}
-            className={errors.phone ? "error" : ""}
-          />
-          {errors.phone && <small>{errors.phone}</small>}
-        </div>
-
-        <div className="input_group">
-          <label htmlFor="age">Age</label>
-          <input
-            id="age"
-            type="text"
-            name="age"
-            value={formValue.age}
-            onChange={handleFormChange}
-          />
-        </div>
-
-        <div className="input_group_radio">
-          <div className="input_group">
-            <label>Mode to Attend</label>
-            <div className="radio_group">
-              <label>
+        <form onSubmit={handleSubmit} noValidate>
+          <div className="grid">
+            {["name", "email", "phone", "age"].map((field) => (
+              <div key={field}>
                 <input
-                  type="radio"
-                  name="mode"
-                  value="offline"
-                  checked={formValue.mode === "offline"}
-                  onChange={handleFormChange}
+                  type={field === "age" ? "number" : "text"}
+                  placeholder={
+                    field === "name"
+                      ? "Full Name"
+                      : field === "email"
+                        ? "Email Address"
+                        : field === "phone"
+                          ? "Phone Number"
+                          : "Age"
+                  }
+                  name={field}
+                  value={formValue[field]}
+                  onChange={handleChange}
+                  className={errors[field] ? "error_input" : ""}
                 />
-                Offline
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="mode"
-                  value="online"
-                  checked={formValue.mode === "online"}
-                  onChange={handleFormChange}
-                />
-                Online
-              </label>
-            </div>
-            {errors.mode && <small>{errors.mode}</small>}
+                {errors[field] && (
+                  <span className="error_text">{errors[field]}</span>
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="input_group">
-            <label>About You</label>
-            <div className="radio_group">
-              <label>
-                <input
-                  type="radio"
-                  name="about"
-                  value="student"
-                  checked={formValue.about === "student"}
-                  onChange={handleFormChange}
-                />
-                Student
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="about"
-                  value="working"
-                  checked={formValue.about === "working"}
-                  onChange={handleFormChange}
-                />
-                Working Professional
-              </label>
-            </div>
-            {errors.about && <small>{errors.about}</small>}
+          {/* STATUS */}
+          <label className="section_label">Professional Status</label>
+          <div className={`choice_row ${errors.status ? "choice_error" : ""}`}>
+            {[
+              "Student",
+              "Working Professional",
+              "Graduate",
+              "Career Switcher",
+            ].map((s) => (
+              <div
+                key={s}
+                className={`choice_card ${formValue.status === s ? "active" : ""}`}
+                onClick={() => setFormValue((p) => ({ ...p, status: s }))}
+              >
+                {s}
+              </div>
+            ))}
           </div>
-        </div>
+          {errors.status && <span className="error_text">{errors.status}</span>}
 
-        <div className="button_wrapper">
-          <button type="submit">Proceed</button>
-        </div>
-      </form>
+          {/* MODE */}
+          <label className="section_label">Workshop Mode</label>
+          <div className={`choice_row ${errors.mode ? "choice_error" : ""}`}>
+            {["Offline", "Online"].map((m) => (
+              <div
+                key={m}
+                className={`choice_card ${formValue.mode === m ? "active" : ""}`}
+                onClick={() => setFormValue((p) => ({ ...p, mode: m }))}
+              >
+                {m}
+              </div>
+            ))}
+          </div>
+          {errors.mode && <span className="error_text">{errors.mode}</span>}
 
-      {showSuccess && (
-        <div className="success_popup">
-          <span>Form submitted successfully!</span>
-        </div>
-      )}
+          {/* STUDENT */}
+          <label className="section_label">
+            Current student of AnalyticShala?
+          </label>
+          <div
+            className={`choice_row ${
+              errors.analyticshalaStudent ? "choice_error" : ""
+            }`}
+          >
+            {["Yes", "No"].map((val) => (
+              <div
+                key={val}
+                className={`choice_card ${
+                  formValue.analyticshalaStudent === val ? "active" : ""
+                }`}
+                onClick={() =>
+                  setFormValue((p) => ({
+                    ...p,
+                    analyticshalaStudent: val,
+                  }))
+                }
+              >
+                {val}
+              </div>
+            ))}
+          </div>
+          {errors.analyticshalaStudent && (
+            <span className="error_text">{errors.analyticshalaStudent}</span>
+          )}
+
+          <button disabled={isSubmitting}>
+            {isSubmitting ? "Preparing Payment..." : "Continue"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,21 @@
 import "./Payment.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-/* Razorpay is loaded via script tag */
 const Payment = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
+
+  // ✅ prevent direct access / refresh crash
+  if (!state) {
+    navigate("/");
+    return null;
+  }
 
   const openRazorpay = () => {
     const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
 
     if (!razorpayKey) {
-      alert("Razorpay key not found. Check environment variables.");
+      alert("Razorpay key missing.");
       return;
     }
 
@@ -20,15 +26,40 @@ const Payment = () => {
       name: "Workshop Registration",
       description: "Workshop Fee",
       order_id: state.orderId,
+
       prefill: {
         name: state.user.name,
         email: state.user.email,
         contact: state.user.phone,
       },
-      handler: function (response) {
-        console.log("Payment success:", response);
-        window.location.href = "/payment-success";
+
+      handler: async function (response) {
+        try {
+          // ✅ SAVE ONLY AFTER PAYMENT
+          await fetch(import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL, {
+            method: "POST",
+            body: new URLSearchParams({
+              action: "saveRegistration",
+              name: state.user.name,
+              email: state.user.email,
+              phone: state.user.phone,
+              age: state.user.age,
+              status: state.user.status,
+              mode: state.user.mode,
+              analyticshalaStudent: state.user.analyticshalaStudent,
+              paymentId: response.razorpay_payment_id,
+            }),
+          });
+
+          navigate("/payment-success");
+        } catch (err) {
+          console.error(err);
+          alert(
+            "Payment successful but failed to record registration. Contact support.",
+          );
+        }
       },
+
       theme: {
         color: "#6c5ce7",
       },
