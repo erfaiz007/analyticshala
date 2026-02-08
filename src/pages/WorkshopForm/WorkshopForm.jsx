@@ -87,7 +87,15 @@ const WorkshopForm = () => {
         }),
       });
 
-      const result = await res.json();
+      const text = await res.text();
+      console.log("RAW RESPONSE:", text);
+
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch {
+        throw new Error("Server did not return JSON");
+      }
 
       if (!result.success) throw new Error("Order creation failed");
 
